@@ -14,9 +14,7 @@ import Login from './Components/Login';
 
 // Routing
 
-import { Route } from 'react-router-dom';
-import { BrowserRouter as Router } from 'react-router-dom';
-
+import { BrowserRouter as Router, Route, Redirect } from 'react-router-dom';
 // Styling Imports
 
 import styled from 'styled-components';
@@ -27,7 +25,7 @@ function App() {
 
 
   return (
-    <Router>
+<Router>
       <AppContainer>
       <NavBar />
         <RouteContainer>
@@ -54,7 +52,7 @@ function App() {
           </Route>
         </RouteContainer>
       </AppContainer>
-    </Router>
+  </Router>
   );
 }
 

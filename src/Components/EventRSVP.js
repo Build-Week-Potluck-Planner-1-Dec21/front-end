@@ -7,7 +7,7 @@ const EventRSVP = () => {
 
     return(
         <div>
-
+            <h2>Event RSVP</h2>
         </div>
     )
 };

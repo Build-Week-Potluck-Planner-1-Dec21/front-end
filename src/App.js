@@ -28,11 +28,44 @@ function App() {
 
   return (
     <Router>
-      <header className="App-header">
-        <h1>Potluck Planner</h1>
-      </header>
+      <AppContainer>
+      <NavBar />
+        <RouteContainer>
+          <Route>
+            <CreateAccount />
+          </Route>
+          <Route>
+            <LogOut />
+          </Route>
+          <Route>
+            <CreatePotluck />
+          </Route>
+          <Route>
+            <EventRSVP />
+          </Route>
+          <Route>
+            <Home />
+          </Route>
+          <Route>
+            <ViewEvents />
+          </Route>
+          <Route>
+            <Login />
+          </Route>
+        </RouteContainer>
+      </AppContainer>
     </Router>
   );
 }
+
+const AppContainer = styled.div`
+    height: 100%;
+`;
+const RouteContainer = styled.div`
+    display: flex;
+    height: 85%;
+    align-items: center;
+    flex-direction: column;
+`;
 
 export default App;

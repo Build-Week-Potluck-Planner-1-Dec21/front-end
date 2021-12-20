@@ -1,19 +1,18 @@
 // Imports here
+import React from 'react'
 
 
 //Component
 
-const NavBar = () => {
+const Logout = () => {
 
     return(
         <div>
-            <h2>NavBar</h2>
+
         </div>
     )
 };
 
 //Export
 
-export default NavBar;
-
-//Export
+export default Logout;

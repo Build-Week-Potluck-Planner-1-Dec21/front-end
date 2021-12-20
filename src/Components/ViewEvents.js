@@ -7,7 +7,7 @@ const ViewEvents = () => {
 
     return(
         <div>
-            <h2>View Events Component</h2>
+
         </div>
     )
 };

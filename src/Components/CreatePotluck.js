@@ -7,7 +7,7 @@ const CreatePotluck = () => {
 
     return(
         <div>
-            <h2>Create Potluck</h2>
+
         </div>
     )
 };

@@ -4,7 +4,7 @@ import React from 'react'
 
 //Component
 
-const EditPotluck = () => {
+const Home = () => {
 
     return(
         <div>
@@ -15,4 +15,4 @@ const EditPotluck = () => {
 
 //Export
 
-export default EditPotluck
+export default Home;

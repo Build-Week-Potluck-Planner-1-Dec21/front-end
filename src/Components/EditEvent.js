@@ -3,7 +3,7 @@ import React from 'react'
 
 //Component
 
-const GuestConfirm = () => {
+const EditEvent = () => {
 
     return(
         <div>
@@ -14,4 +14,4 @@ const GuestConfirm = () => {
 
 //Export
 
-export default GuestConfirm;
+export default EditEvent;

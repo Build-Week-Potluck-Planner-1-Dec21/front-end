@@ -1,9 +1,10 @@
 // Imports here
+import React from 'react'
 
 
 //Component
 
-const UserLogin = () => {
+const CreateAccount = () => {
 
     return(
         <div>
@@ -14,5 +15,4 @@ const UserLogin = () => {
 
 //Export
 
-export default UserLogin;
-
+export default CreateAccount

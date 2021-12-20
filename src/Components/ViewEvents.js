@@ -1,10 +1,9 @@
 // Imports here
-import React from 'react'
 
 
 //Component
 
-const AddFoodItem = () => {
+const ViewEvents = () => {
 
     return(
         <div>
@@ -15,4 +14,5 @@ const AddFoodItem = () => {
 
 //Export
 
-export default AddFoodItem;
+export default ViewEvents;
+

@@ -3,7 +3,7 @@
 
 //Component
 
-const UserCreateAccount = () => {
+const EventRSVP = () => {
 
     return(
         <div>
@@ -14,6 +14,6 @@ const UserCreateAccount = () => {
 
 //Export
 
-export default UserCreateAccount;
+export default EventRSVP;
 
 //Export

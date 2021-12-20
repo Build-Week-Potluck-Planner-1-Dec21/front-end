@@ -3,7 +3,7 @@ import React from 'react'
 
 //Component
 
-const CreatePotluck = () => {
+const Event = () => {
 
     return(
         <div>
@@ -14,4 +14,4 @@ const CreatePotluck = () => {
 
 //Export
 
-export default CreatePotluck;
+export default Event;

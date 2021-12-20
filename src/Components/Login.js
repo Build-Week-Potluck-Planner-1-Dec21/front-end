@@ -1,9 +1,10 @@
 // Imports here
+import React from 'react'
 
 
 //Component
 
-const GuestSelectItem = () => {
+const Login = () => {
 
     return(
         <div>
@@ -14,5 +15,4 @@ const GuestSelectItem = () => {
 
 //Export
 
-export default GuestSelectItem;
-
+export default Login;

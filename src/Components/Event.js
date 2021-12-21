@@ -12,9 +12,9 @@ const Event = (props) => {
 			<p>
 				<strong>Date:</strong> {event.date}
 				<br />
-				<strong>Time:</strong> {event.time} <br />
 				<strong>Location:</strong> {event.location}
 				<br />
+				<strong>Time:</strong> {event.time} <br />
 				<strong>Event Organizer:</strong> {event.username} <br />
 			</p>
 			<p>{event.potluck_description}</p>

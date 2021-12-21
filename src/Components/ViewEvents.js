@@ -35,9 +35,25 @@ const ViewEvents = (props) => {
 			<div className="grid-2">
 				{events.map((event) => {
 					return (
-						<div key={event.id} className="card">
-							<Event key={event.potluck_id} event={event} />
-						</div>
+						<>
+							<a
+								href="/event:{{event.potluck_id}}"
+								style={{ 'text-decoration': 'none', color: 'black' }}
+							>
+								<div key={event.potluck_id} className="card">
+									<div className="lead text-center">{event.potluck_name}</div>
+
+									<p>
+										<strong>Date:</strong> {event.date}
+										<br />
+										<strong>Location:</strong> {event.location}
+										<br />
+										<strong>Time:</strong> {event.time} <br />
+										<strong>Event Organizer:</strong> {event.username} <br />
+									</p>
+								</div>
+							</a>
+						</>
 					);
 				})}
 			</div>
@@ -48,3 +64,7 @@ const ViewEvents = (props) => {
 //Export
 
 export default ViewEvents;
+
+{
+	/* <Event key={event.potluck_id} event={event} />  */
+}

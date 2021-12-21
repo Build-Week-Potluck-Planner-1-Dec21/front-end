@@ -41,7 +41,7 @@ const Login = ( ) => {
 
         <div>
          <h1>Login</h1>
-            <div>Errors here</div>
+            
             <form onSubmit={onSubmit}>
                 <label>Name:
                     <input 

@@ -28,25 +28,13 @@ const App = () => {
       <NavBar /> 
         <RouteContainer>
           <Switch>
-            <PrivateRoute exact path='/rsvp' component={EventRSVP} />
-            <PrivateRoute exact path='/create-potluck' component={CreatePotluck} />
-          <Route>
-            <ViewEvents exact path='/events'/>
-          </Route>
-          <Route>
-            <CreateAccount exact path='/create-account'/>
-          </Route>
-          <Route>
-            <LogOut exact path='/logout' />
-          </Route>
-          {/* Login Component not rendering -- Fix second*/}
-          <Route exact path='/login' >
-            <Login />
-          </Route>
-          {/* Home Component not rendering -- Fix first*/}
-          <Route path='/'>
-            <Home />
-          </Route>
+          <PrivateRoute exact path='/rsvp' component={EventRSVP} />
+          <PrivateRoute exact path='/create-potluck' component={CreatePotluck} />
+          <Route exact path='/events' component={ViewEvents} />
+          <Route exact path='/create-account' component={CreateAccount} />
+          <Route exact path='/logout' component={LogOut} />
+          <Route exact path='/login' component={Login} />
+          <Route path='/' component={Home} />
           </Switch>
         </RouteContainer>
       </AppContainer>

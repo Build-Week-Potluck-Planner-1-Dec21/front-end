@@ -14,16 +14,13 @@ import Login from './Components/Login';
 
 // Routing
 
-import { BrowserRouter as Router, Route, Redirect, Switch } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import PrivateRoute from './Routing/PrivateRoute';
 
 // Styling Imports
 import styled from 'styled-components';
 
-
-function App() {
-
-
+const App = () => {
 
   return (
 <Router>
@@ -34,19 +31,19 @@ function App() {
             <PrivateRoute exact path='/rsvp' component={EventRSVP} />
             <PrivateRoute exact path='/create-potluck' component={CreatePotluck} />
           <Route>
-            <ViewEvents path='/events'/>
+            <ViewEvents exact path='/events'/>
           </Route>
           <Route>
-            <CreateAccount path='/create-account'/>
+            <CreateAccount exact path='/create-account'/>
           </Route>
           <Route>
-            <LogOut path='/logout' />
+            <LogOut exact path='/logout' />
           </Route>
-          {/* Fix login second*/}
+          {/* Login Component not rendering -- Fix second*/}
           <Route exact path='/login' >
             <Login />
           </Route>
-          {/* Fix homepage first*/}
+          {/* Home Component not rendering -- Fix first*/}
           <Route path='/'>
             <Home />
           </Route>

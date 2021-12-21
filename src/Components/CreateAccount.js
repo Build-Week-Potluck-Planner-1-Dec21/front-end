@@ -15,12 +15,23 @@ const CreateAccount = () => {
     const [ credentials, setCredentials ] = useState(initialCredentials);
     const { push } = useHistory();
 
-    const handleChange = () => {
-
+    const handleChange = (e) => {
+        setCredentials({
+            ...credentials,
+            [e.target.name]: e.target.value,
+        })
     }
 
-    const handleSubmit = () => {
-        
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        axios.post(`https://potluckplan.herokuapp.com/api/auth/register`, credentials)
+        .then(resp => {
+            console.log(resp)
+        })
+        .catch(err => {
+            console.log(err)
+        })
+
     }
 
     return(

@@ -5,7 +5,7 @@ const axiosWithAuth = () => {
 
     return axios.create({
         headers: { authorization: token },
-        baseURL: 'http://localhost:3000/api'
+        baseURL: 'https://potluckplan.herokuapp.com/api'
     })
 }
 

@@ -3,14 +3,13 @@ import React from 'react';
 
 // Importing Components
 
-import CreateAccount from './Components/CreateAccount';
-import LogOut from './Components/Logout';
-import CreatePotluck from './Components/CreatePotluck';
-import EventRSVP from './Components/EventRSVP';
-import Home from './Components/Home';
-import NavBar from './Components/NavBar';
-import ViewEvents from './Components/ViewEvents';
-import Login from './Components/Login';
+import CreateAccount from "./Components/CreateAccount";
+import CreatePotluck from "./Components/CreatePotluck";
+import EventRSVP from "./Components/EventRSVP";
+import Home from "./Components/Home";
+import NavBar from "./Components/NavBar";
+import ViewEvents from "./Components/ViewEvents";
+import Login from "./Components/Login";
 import Event from './Components/Event';
 
 // Routing
@@ -22,28 +21,28 @@ import PrivateRoute from './Routing/PrivateRoute';
 import styled from 'styled-components';
 
 const App = () => {
-	return (
-		<Router>
-			<AppContainer>
-				<NavBar />
-				<RouteContainer>
-					<Switch>
-						<PrivateRoute exact path="/rsvp" component={EventRSVP} />
-						<PrivateRoute
-							exact
-							path="/create-potluck"
-							component={CreatePotluck}
-						/>
-						<Route exact path="/events" component={ViewEvents} />
-						<Route exact path="/create-account" component={CreateAccount} />
-						<Route exact path="/logout" component={LogOut} />
-						<Route exact path="/login" component={Login} />
-						<Route path="/" component={Home} />
-					</Switch>
-				</RouteContainer>
-			</AppContainer>
-		</Router>
-	);
+
+  return (
+    <Router>
+      <AppContainer>
+        <NavBar />
+        <RouteContainer>
+          <Switch>
+            <PrivateRoute exact path="/rsvp" component={EventRSVP} />
+            <PrivateRoute
+              exact
+              path="/create-potluck"
+              component={CreatePotluck}
+            />
+            <Route exact path="/events" component={ViewEvents} />
+            <Route exact path="/create-account" component={CreateAccount} />
+            <Route exact path="/login" component={Login} />
+            <Route path="/" component={Home} />
+          </Switch>
+        </RouteContainer>
+      </AppContainer>
+    </Router>
+  );
 };
 
 const AppContainer = styled.div`

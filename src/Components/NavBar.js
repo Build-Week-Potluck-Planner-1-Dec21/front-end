@@ -7,6 +7,10 @@ import { Link } from 'react-router-dom';
 
 const NavBar = () => {
 
+    const handleLogout = (e) => {
+        console.log(e.target)
+    }
+
     return(
         
         <div>
@@ -17,7 +21,7 @@ const NavBar = () => {
             <br />
             <Link to='/login'>Login</Link>
             <br />
-            <Link to='/logout'>Logout</Link>
+            <button onClick={handleLogout}>Logout</button>
             <i className="fas fa-sign-in-alt"></i>
         </div>
         

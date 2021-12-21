@@ -27,7 +27,8 @@ const EventRSVP = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        axiosWithAuth.post(`potlucks/:potluck_id/items`, item)
+        axiosWithAuth()
+        .post(`potlucks/:potluck_id/items`, item)
         .then(resp => {
             console.log(resp)
             //push('/event/:id')

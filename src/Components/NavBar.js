@@ -1,15 +1,20 @@
 // Imports here
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
 
 
 //Component
 
 const NavBar = () => {
 
-    const handleLogout = (e) => {
-        console.log(e.target)
-    }
+    const { push } = useHistory();
+
+    const handleLogout = () => {
+    localStorage.removeItem('token');
+    push('/login')
+
+}
 
     return(
         

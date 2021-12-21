@@ -29,7 +29,7 @@ const EventRSVP = () => {
         e.preventDefault();
         axiosWithAuth()
         // confirm URL with Brian
-        .post(`/potlucks/:id/items`, item)
+        .post(`/potlucks/:potluck_id/items`, item)
         .then(resp => {
             console.log(resp)
             //push('/event/:id')

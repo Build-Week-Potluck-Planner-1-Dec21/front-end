@@ -21,7 +21,7 @@ const initialPotluck = {
      date: "",
      time: "",
      location: "",
-     organizer: "",
+     organizer: 1,
 }
 
 // Component
@@ -35,13 +35,14 @@ const CreatePotluck = () => {
         setPotluck({
             ...potluck,
             [e.target.name]: e.target.value,
+            // organizer: this.user.id?
         })
     }
 
     const handleSubmit = (e) => {
         e.preventDefault();
         axiosWithAuth()
-        .post(``, potluck)
+        .post(`/potlucks`, potluck)
         .then(resp => {
             console.log(resp)
             // push('/events')
@@ -85,14 +86,6 @@ const CreatePotluck = () => {
                     type="text" 
                     name="time" 
                     id="time"
-                    onChange={handleChange}
-                    />
-                </label>
-                <label style={LabelStyle}>Organized By:&nbsp;
-                    <input 
-                    type="text" 
-                    name="organizer" 
-                    id="organizer"
                     onChange={handleChange}
                     />
                 </label>

@@ -3,14 +3,26 @@ import React from 'react'
 
 //Component
 
+
+
+  const LabelStyle = {
+      display: 'flex',
+      flexDirection: 'column',
+      justifyContent: 'space-evenly',
+      padding: 10,
+      margin: 10,
+      fontSize: 20,
+  }
+
+
 const CreatePotluck = () => {
 
     return(
         <div>
-          <h1>Create your Potluck!</h1>
+          <h1 style={{paddingBottom: '20px'}}>Create Potluck!</h1>
            
             
-                <label>Nickname:
+                <label style={LabelStyle}>Nickname:&nbsp;
                     <input 
                     type="text" 
                     name="nickname" 
@@ -18,7 +30,7 @@ const CreatePotluck = () => {
                     
                     />
                 </label>
-                <label>Event Date:
+                <label style={LabelStyle}>Event Date:&nbsp;
                     <input 
                     type="text" 
                     name="date" 
@@ -26,7 +38,7 @@ const CreatePotluck = () => {
                     
                     />
                 </label>
-                <label>Location:
+                <label style={LabelStyle}>Location:&nbsp;
                     <input 
                     type="text" 
                     name="location" 
@@ -34,7 +46,7 @@ const CreatePotluck = () => {
                     
                     />
                 </label>
-                <label>Time:
+                <label style={LabelStyle}>Time:&nbsp;
                     <input 
                     type="text" 
                     name="time" 
@@ -42,7 +54,7 @@ const CreatePotluck = () => {
                     
                     />
                 </label>
-                <label>Public Event?:
+                <label style={LabelStyle}>Public Event?:&nbsp;
                     <input 
                     type="checkbox" 
                     name="public-event" 
@@ -50,7 +62,7 @@ const CreatePotluck = () => {
                     
                     />
                 </label>
-                <button id='submit' >Submit</button>
+                <button id='submit' style={LabelStyle}>Submit</button>
                 
         </div>
     )

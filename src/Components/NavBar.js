@@ -1,6 +1,6 @@
 // Imports here
 import React from 'react';
-import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 
 //Component
@@ -8,14 +8,19 @@ import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 const NavBar = () => {
 
     return(
+        
         <div>
-            <h2>Potluck Planner</h2>
-            <Route exact path='/' />
-            <Link to='/'><button id='View-potluck'>View Potlucks</button></Link>
-            <Route exact path='/' />
-            <Link to='/'><button id='Create-potluck'>Create Potluck</button></Link>
+            <Link to='/'><h2>Potluck Planner</h2></Link>
+            <Link to='/events'>View Potlucks</Link>
+            <br />
+            <Link to='/create-potluck'>Create Potluck</Link>
+            <br />
+            <Link to='/login'>Login</Link>
+            <br />
+            <Link to='/logout'>Logout</Link>
             <i className="fas fa-sign-in-alt"></i>
         </div>
+        
     )
 };
 

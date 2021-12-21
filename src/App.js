@@ -14,42 +14,40 @@ import Login from './Components/Login';
 
 // Routing
 
-import { BrowserRouter as Router, Route, Redirect } from 'react-router-dom';
-// Styling Imports
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import PrivateRoute from './Routing/PrivateRoute';
 
+// Styling Imports
 import styled from 'styled-components';
 
-
-function App() {
-
-
+const App = () => {
 
   return (
 <Router>
       <AppContainer>
-      <NavBar />
+      <NavBar /> 
         <RouteContainer>
+          <Switch>
+            <PrivateRoute exact path='/rsvp' component={EventRSVP} />
+            <PrivateRoute exact path='/create-potluck' component={CreatePotluck} />
           <Route>
-            <CreateAccount />
+            <ViewEvents exact path='/events'/>
           </Route>
           <Route>
-            <LogOut />
+            <CreateAccount exact path='/create-account'/>
           </Route>
           <Route>
-            <CreatePotluck />
+            <LogOut exact path='/logout' />
           </Route>
-          <Route>
-            <EventRSVP />
-          </Route>
-          <Route>
-            <Home />
-          </Route>
-          <Route>
-            <ViewEvents />
-          </Route>
-          <Route>
+          {/* Login Component not rendering -- Fix second*/}
+          <Route exact path='/login' >
             <Login />
           </Route>
+          {/* Home Component not rendering -- Fix first*/}
+          <Route path='/'>
+            <Home />
+          </Route>
+          </Switch>
         </RouteContainer>
       </AppContainer>
   </Router>

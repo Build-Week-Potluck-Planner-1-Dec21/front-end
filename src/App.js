@@ -30,25 +30,25 @@ function App() {
       <NavBar />
         <RouteContainer>
           <Route>
-            <CreateAccount />
+            <EventRSVP path='rsvp'/>
           </Route>
           <Route>
-            <LogOut />
+            <ViewEvents path='/events'/>
           </Route>
           <Route>
-            <CreatePotluck />
+            <CreatePotluck path='/create-potluck'/>
           </Route>
           <Route>
-            <EventRSVP />
+            <CreateAccount path='/create-account'/>
           </Route>
           <Route>
+            <LogOut path='logout'/>
+          </Route>
+          <Route>
+            <Login path='/login'/>
+          </Route>
+          <Route path='/'>
             <Home />
-          </Route>
-          <Route>
-            <ViewEvents />
-          </Route>
-          <Route>
-            <Login />
           </Route>
         </RouteContainer>
       </AppContainer>

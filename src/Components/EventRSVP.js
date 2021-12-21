@@ -28,6 +28,7 @@ const EventRSVP = () => {
     const handleSubmit = (e) => {
         e.preventDefault();
         axiosWithAuth()
+        // confirm URL with Brian
         .post(`potlucks/:potluck_id/items`, item)
         .then(resp => {
             console.log(resp)

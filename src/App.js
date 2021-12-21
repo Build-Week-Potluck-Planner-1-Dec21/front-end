@@ -29,6 +29,7 @@ const App = () => {
         <RouteContainer>
           <Switch>
             <PrivateRoute exact path='/rsvp' component={EventRSVP} />
+            {/* Fix 3rd - Home Component not rendering */}
             <PrivateRoute exact path='/create-potluck' component={CreatePotluck} />
           <Route>
             <ViewEvents exact path='/events'/>
@@ -39,11 +40,11 @@ const App = () => {
           <Route>
             <LogOut exact path='/logout' />
           </Route>
-          {/* Login Component not rendering -- Fix second*/}
+          {/* Fix 2nd - Login Component not rendering */}
           <Route exact path='/login' >
             <Login />
           </Route>
-          {/* Home Component not rendering -- Fix first*/}
+          {/* Fix 1st - Home Component not rendering */}
           <Route path='/'>
             <Home />
           </Route>

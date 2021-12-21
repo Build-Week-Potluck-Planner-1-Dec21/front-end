@@ -21,7 +21,7 @@ const initialPotluck = {
      date: "",
      time: "",
      location: "",
-     organizer: 1
+     organizer: "",
 }
 
 // Component
@@ -40,19 +40,28 @@ const CreatePotluck = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
+        axiosWithAuth()
+        .post(``, potluck)
+        .then(resp => {
+            console.log(resp)
+            // push('/events')
+        })
+        .catch(err => {
+            console.log(err)
+        })
     }
 
     return(
         <div>
           <h1 style={{paddingBottom: '20px'}}>Create Potluck!</h1>
            
-            
+            <form onSubmit={handleSubmit}>
                 <label style={LabelStyle}>Nickname:&nbsp;
                     <input 
                     type="text" 
                     name="potluck_name" 
                     id="potluck_name"
-                    
+                    onChange={handleChange}
                     />
                 </label>
                 <label style={LabelStyle}>Event Date:&nbsp;
@@ -60,7 +69,7 @@ const CreatePotluck = () => {
                     type="text" 
                     name="date" 
                     id="date"
-                    
+                    onChange={handleChange}
                     />
                 </label>
                 <label style={LabelStyle}>Location:&nbsp;
@@ -68,7 +77,7 @@ const CreatePotluck = () => {
                     type="text" 
                     name="location" 
                     id="location"
-                    
+                    onChange={handleChange}
                     />
                 </label>
                 <label style={LabelStyle}>Time:&nbsp;
@@ -76,7 +85,15 @@ const CreatePotluck = () => {
                     type="text" 
                     name="time" 
                     id="time"
-                    
+                    onChange={handleChange}
+                    />
+                </label>
+                <label style={LabelStyle}>Organized By:&nbsp;
+                    <input 
+                    type="text" 
+                    name="organizer" 
+                    id="organizer"
+                    onChange={handleChange}
                     />
                 </label>
                 <label style={LabelStyle}>Public Event?:&nbsp;
@@ -88,7 +105,7 @@ const CreatePotluck = () => {
                     />
                 </label>
                 <button id='submit' style={LabelStyle}>Submit</button>
-                
+            </form>
         </div>
     )
 };

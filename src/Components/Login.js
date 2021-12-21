@@ -25,12 +25,11 @@ const Login = ( ) => {
         evt.preventDefault();
         axios.post(`https://potluckplan.herokuapp.com/api/auth/login/`, credentials)
         .then( resp => {
-            console.log(resp)
-            // const { token, message, user_id } = resp.data
-            // localStorage.setItem('token', token);
-            // localStorage.setItem('message', message);
-            // localStorage.setItem('user_id', user_id);
-            // push('/create-potluck')
+            const { token, message, user_id } = resp.data
+            localStorage.setItem('token', token);
+            localStorage.setItem('message', message);
+            localStorage.setItem('user_id', user_id);
+            push('/create-potluck')
         })
         .catch(err => {
             console.log(err)

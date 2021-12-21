@@ -1,9 +1,9 @@
 // Imports here
-import React from 'react'
+import React, { useState } from 'react'
+import axiosWithAuth from '../utils/axiosWithAuth';
+import { useHistory } from 'react-router-dom';
 
-//Component
-
-
+// Styling
 
   const LabelStyle = {
       display: 'flex',
@@ -14,8 +14,33 @@ import React from 'react'
       fontSize: 20,
   }
 
+// Initial data
+
+const initialPotluck = {
+     potluck_name: "",
+     date: "",
+     time: "",
+     location: "",
+     organizer: 1
+}
+
+// Component
 
 const CreatePotluck = () => {
+
+    const [ potluck, setPotluck] = useState(initialPotluck)
+    const { push } = useHistory();
+
+    const handleChange = (e) => {
+        setPotluck({
+            ...potluck,
+            [e.target.name]: e.target.value,
+        })
+    }
+
+    const handleSubmit = (e) => {
+        e.preventDefault();
+    }
 
     return(
         <div>
@@ -25,8 +50,8 @@ const CreatePotluck = () => {
                 <label style={LabelStyle}>Nickname:&nbsp;
                     <input 
                     type="text" 
-                    name="nickname" 
-                    id="nickname"
+                    name="potluck_name" 
+                    id="potluck_name"
                     
                     />
                 </label>

@@ -6,9 +6,13 @@ import React from 'react'
 
 const Logout = () => {
 
+    const handleLogout = (e) => {
+        console.log(e.target)
+    }
+
     return(
         <div>
-         <h2>Logout</h2>
+         <button onClick={handleLogout}>Logout</button>
         </div>
     )
 };

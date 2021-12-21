@@ -31,21 +31,25 @@ function App() {
         <RouteContainer>
           <Switch>
           <Route>
-            <ViewEvents exact path='/events'/>
+            <ViewEvents path='/events'/>
           </Route>
           <Route>
-            <CreatePotluck exact path='/create-potluck'/>
+            <CreatePotluck path='/create-potluck'/>
           </Route>
           <Route>
-            <CreateAccount exact path='/create-account'/>
+            <CreateAccount path='/create-account'/>
           </Route>
           <Route>
-            <LogOut exact path='/logout' />
+            <LogOut path='/logout' />
           </Route>
-          <Route exact path='/login' component={Login} />
+          {/* Fix login second*/}
+          <Route exact path='/login' >
+            <Login />
+          </Route>
           <Route>
-            <EventRSVP exact path='/rsvp' />
+            <EventRSVP path='/rsvp' />
           </Route>
+          {/* Fix homepage first*/}
           <Route path='/'>
             <Home />
           </Route>

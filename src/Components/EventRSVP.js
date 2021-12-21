@@ -30,5 +30,3 @@ const EventRSVP = () => {
 //Export
 
 export default EventRSVP;
-
-//Export

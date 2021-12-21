@@ -31,22 +31,20 @@ function App() {
         <RouteContainer>
           <Switch>
           <Route>
-            <EventRSVP path='rsvp'/>
+            <ViewEvents exact path='/events'/>
           </Route>
           <Route>
-            <ViewEvents path='/events'/>
+            <CreatePotluck exact path='/create-potluck'/>
           </Route>
           <Route>
-            <CreatePotluck path='/create-potluck'/>
+            <CreateAccount exact path='/create-account'/>
           </Route>
           <Route>
-            <CreateAccount path='/create-account'/>
+            <LogOut exact path='/logout' />
           </Route>
+          <Route exact path='/login' component={Login} />
           <Route>
-            <LogOut path='logout'/>
-          </Route>
-          <Route>
-            <Login path='/login'/>
+            <EventRSVP exact path='/rsvp' />
           </Route>
           <Route path='/'>
             <Home />

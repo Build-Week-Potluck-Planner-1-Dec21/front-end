@@ -4,7 +4,6 @@ import React from "react";
 // Importing Components
 
 import CreateAccount from "./Components/CreateAccount";
-import LogOut from "./Components/Logout";
 import CreatePotluck from "./Components/CreatePotluck";
 import EventRSVP from "./Components/EventRSVP";
 import Home from "./Components/Home";
@@ -35,7 +34,6 @@ const App = () => {
             />
             <Route exact path="/events" component={ViewEvents} />
             <Route exact path="/create-account" component={CreateAccount} />
-            <Route exact path="/logout" component={LogOut} />
             <Route exact path="/login" component={Login} />
             <Route path="/" component={Home} />
           </Switch>

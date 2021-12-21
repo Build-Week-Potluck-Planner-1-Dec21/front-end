@@ -8,11 +8,15 @@ const initialCredentials = {
     password: '',
 }
 
+const initialMessage = ''
+
 //Component
 
 const CreateAccount = () => {
 
     const [ credentials, setCredentials ] = useState(initialCredentials);
+    const [ loginMessage, setLoginMessage ] = useState(initialMessage)
+
     const { push } = useHistory();
 
     const handleChange = (e) => {
@@ -27,6 +31,7 @@ const CreateAccount = () => {
         axios.post(`https://potluckplan.herokuapp.com/api/auth/register`, credentials)
         .then(resp => {
             console.log(resp)
+            setLoginMessage(resp.data.message)
         })
         .catch(err => {
             console.log(err)
@@ -36,7 +41,26 @@ const CreateAccount = () => {
 
     return(
         <div>
-
+         <h1>Create Account</h1>
+            <form onSubmit={handleSubmit}>
+                <label>Name:
+                    <input 
+                    type="text" 
+                    name="username" 
+                    id="username"
+                    onChange={handleChange}
+                    />
+                </label>
+                <label>Password:
+                    <input 
+                    type="password" 
+                    name="password" 
+                    id="password"
+                    onChange={handleChange}
+                    />
+                </label>
+                <button id='submit'>Submit</button>
+            </form>
         </div>
     )
 };

@@ -15,8 +15,9 @@ import Login from './Components/Login';
 // Routing
 
 import { BrowserRouter as Router, Route, Redirect, Switch } from 'react-router-dom';
-// Styling Imports
+import PrivateRoute from './Routing/PrivateRoute';
 
+// Styling Imports
 import styled from 'styled-components';
 
 
@@ -27,14 +28,13 @@ function App() {
   return (
 <Router>
       <AppContainer>
-      <NavBar />
+      <NavBar /> 
         <RouteContainer>
           <Switch>
+            <PrivateRoute exact path='/rsvp' component={EventRSVP} />
+            <PrivateRoute exact path='/create-potluck' component={CreatePotluck} />
           <Route>
             <ViewEvents path='/events'/>
-          </Route>
-          <Route>
-            <CreatePotluck path='/create-potluck'/>
           </Route>
           <Route>
             <CreateAccount path='/create-account'/>
@@ -45,9 +45,6 @@ function App() {
           {/* Fix login second*/}
           <Route exact path='/login' >
             <Login />
-          </Route>
-          <Route>
-            <EventRSVP path='/rsvp' />
           </Route>
           {/* Fix homepage first*/}
           <Route path='/'>

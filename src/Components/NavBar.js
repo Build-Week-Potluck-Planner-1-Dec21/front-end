@@ -14,7 +14,7 @@ const NavBar = () => {
             <Link to='/'><button id='View-potluck'>View Potlucks</button></Link>
             <Route exact path='/' />
             <Link to='/'><button id='Create-potluck'>Create Potluck</button></Link>
-            <i class="fas fa-sign-in-alt"></i>
+            <i className="fas fa-sign-in-alt"></i>
         </div>
     )
 };

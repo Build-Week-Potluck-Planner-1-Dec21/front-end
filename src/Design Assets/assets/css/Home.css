@@ -1,0 +1,11 @@
+h2 {
+  background: #a19a8d;
+  font-size: 40px;
+  color: rgb(252, 252, 252);
+  margin-top: 0%;
+  padding: 3px;
+}
+
+* {
+  background: #faf9f8;
+}

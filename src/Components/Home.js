@@ -1,16 +1,11 @@
 // Imports here
-import React from 'react'
-
+import React from "react";
+import "../Design Assets/assets/css/Home.css";
 
 //Component
 
 const Home = () => {
-
-    return(
-        <div>
-
-        </div>
-    )
+  return <div></div>;
 };
 
 //Export

@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useHistory } from 'react-router-dom';
 import axios from 'axios';
+import LoginImg from '../Image Assets/pic11.jpg';
 
 const initialCredentials = {
     username: '',
@@ -37,11 +38,34 @@ const Login = ( ) => {
 
     }
 
-    return(
+    //Styling
+     
+    const TextStyling ={
+      marginLeft: 500,
+      marginRight: 500,
 
-        <div>
+    }
+    const ImgStyling ={
+      display: 'block',
+      marginLeft: 100,
+      marginRight: 300,
+      width: '100%',
+      marginTop: 40,
+      paddingRight: 180,
+      }
+     const ButtonStyling ={
+         padding: 5,
+
+     }
+    return(
+       
+       <div>
+          <div id='loginimg' style ={ImgStyling}>
+            <img src={LoginImg} alt="image" />
+            </div> 
+            <div id='textInput' style ={TextStyling}>
          <h1>Login</h1>
-            
+           
             <form onSubmit={onSubmit}>
                 <label>Name:
                     <input 
@@ -59,12 +83,13 @@ const Login = ( ) => {
                     onChange={onChange}
                     />
                 </label>
-                <button id='submit' >Submit</button>
+                <button id='submit' style={ButtonStyling} >Submit</button>
             </form>
            <br />
            <p>Don't have an account?</p>
            <br />
            <a href='/create-account'>Click here.</a>
+           </div>
         </div>
     )
 };

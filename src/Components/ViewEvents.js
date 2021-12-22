@@ -53,7 +53,3 @@ const ViewEvents = (props) => {
 //Export
 
 export default ViewEvents;
-
-{
-	/* <Event key={event.potluck_id} event={event} />  */
-}

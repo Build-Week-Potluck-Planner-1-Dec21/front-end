@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 
 const EditEvent = (props) => {
 	const { handleEdit, handleDelete, event, editID } = props;

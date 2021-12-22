@@ -1,7 +1,7 @@
 import React from 'react';
 
 const Event = (props) => {
-	const { event, handleEdit, handleDelete, handleSelectEdit } = props;
+	const { event, handleEdit, handleDelete, handleEditSelect } = props;
 
 	return (
 		<>

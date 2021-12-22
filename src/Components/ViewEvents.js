@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import '../Design Assets/assets/css/events.css';
 import Event from './Event';
+import EditEvent from './EditEvent';
 import axios from 'axios';
 
 const initialValues = {
@@ -34,7 +35,7 @@ const ViewEvents = (props) => {
 
 	const handleEdit = (event) => {
 		axios
-			.put(`/events/${event.id}`)
+			.put(`/api/potlucks/${event.id}`)
 			.then((res) => {
 				events.map((item) => (item.id == event.id ? res : item));
 			})
@@ -74,7 +75,7 @@ const ViewEvents = (props) => {
 				<EditEvent
 					editID={editID}
 					handleEdit={handleEdit}
-					handleEditCancel={handleEditCancel}
+					handleEditSelect={handleEditSelect}
 				/>
 			)}
 		</div>

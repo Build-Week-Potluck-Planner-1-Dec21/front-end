@@ -1,6 +1,6 @@
 // Imports here
 import React, { useState } from 'react'
-import { useHistory } from 'react-router-dom';
+import { useHistory, useParams } from 'react-router-dom';
 import axiosWithAuth from '../utils/axiosWithAuth';
 
 // Initial data
@@ -10,9 +10,9 @@ import axiosWithAuth from '../utils/axiosWithAuth';
 
 //Component
 
-const EventRSVP = (props) => {
+const EventRSVP = ( ) => {
 
-    const { potluck_id } = props
+    const potluck_id = useParams();
 
     const initialRSVP = {
         username: '',
@@ -22,7 +22,6 @@ const EventRSVP = (props) => {
 
     const [ rsvp, setRsvp ] = useState(initialRSVP)
     const { push } = useHistory();
-    // add use params
 
     const handleChange = (e) => {
 
@@ -36,6 +35,7 @@ const EventRSVP = (props) => {
     const handleSubmit = (e) => {
         e.preventDefault();
         axiosWithAuth()
+        // Need confirmation of end point from Brian
         .post(`/potlucks/${potluck_id}/guests`, rsvp)
         .then(resp => {
             console.log(resp)

@@ -40,18 +40,7 @@ const ViewEvents = (props) => {
 								href="/event:{{event.potluck_id}}"
 								style={{ 'text-decoration': 'none', color: 'black' }}
 							>
-								<div key={event.potluck_id} className="card">
-									<div className="lead text-center">{event.potluck_name}</div>
-
-									<p>
-										<strong>Date:</strong> {event.date}
-										<br />
-										<strong>Location:</strong> {event.location}
-										<br />
-										<strong>Time:</strong> {event.time} <br />
-										<strong>Event Organizer:</strong> {event.username} <br />
-									</p>
-								</div>
+								<Event key={event.potluck_id} event={event} />
 							</a>
 						</>
 					);

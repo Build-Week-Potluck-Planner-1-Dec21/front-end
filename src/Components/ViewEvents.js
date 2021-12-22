@@ -33,28 +33,11 @@ const ViewEvents = (props) => {
 		<div className="container">
 			<h1>Events List</h1>
 			<div className="grid-2">
-				{events.map((event) => {
-					return (
-						<>
-							<a
-								href="/event:{{event.potluck_id}}"
-								style={{ 'text-decoration': 'none', color: 'black' }}
-							>
-								<div key={event.potluck_id} className="card">
-									<div className="lead text-center">{event.potluck_name}</div>
-
-									<p>
-										<strong>Date:</strong> {event.date}
-										<br />
-										<strong>Location:</strong> {event.location}
-										<br />
-										<strong>Time:</strong> {event.time} <br />
-										<strong>Event Organizer:</strong> {event.username} <br />
-									</p>
-								</div>
-							</a>
-						</>
-					);
+				{events.map( event => {
+					return(
+					<Event 
+					event={event}
+					/>)
 				})}
 			</div>
 		</div>

@@ -1,10 +1,18 @@
 // Imports here
 import React from 'react';
+import { useHistory } from 'react-router-dom';
 
 //Component
 
 const Event = (props) => {
+
+	const { push } = useHistory();
+
 	const { event } = props;
+
+	const handleRSVP = () => {
+		push(`/rsvp/${event.potluck_id}`)
+	}
 
 	return (
 		<>
@@ -18,6 +26,12 @@ const Event = (props) => {
 				<strong>Event Organizer:</strong> {event.username} <br />
 			</p>
 			<p>{event.potluck_description}</p>
+			<br />
+			<button onClick={handleRSVP}>RSVP</button>
+			<br />
+			<button>Edit</button>
+			<br />
+			<button>Delete</button>
 		</>
 	);
 };

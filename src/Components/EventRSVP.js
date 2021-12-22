@@ -1,6 +1,6 @@
 // Imports here
 import React, { useState } from 'react'
-import { useHistory } from 'react-router-dom';
+import { useHistory, useParams } from 'react-router-dom';
 import axiosWithAuth from '../utils/axiosWithAuth';
 
 // Initial data
@@ -10,19 +10,17 @@ import axiosWithAuth from '../utils/axiosWithAuth';
 
 //Component
 
-const EventRSVP = (props) => {
-
-    const { potluck_id } = props
+const EventRSVP = ( ) => {
 
     const initialRSVP = {
         username: '',
         item_name: '',
-        potluck_id: potluck_id,
+        potluck_id: '',
     }
 
     const [ rsvp, setRsvp ] = useState(initialRSVP)
     const { push } = useHistory();
-    // add use params
+    const potluck_id = useParams();
 
     const handleChange = (e) => {
 

@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import '../Design Assets/assets/css/events.css';
 import Event from './Event';
 import axios from 'axios';
@@ -29,6 +30,15 @@ const ViewEvents = (props) => {
 			});
 	}, []);
 
+	const handleView = (event) => {
+		axios
+			.get(`/events/${event.potluck_id}`)
+			.then((res) => {
+				events.map((event) => (event.potluck_id == event.id ? res : event));
+			})
+			.catch((err) => console.log(err));
+	};
+
 	return (
 		<div className="container">
 			<h1>Events List</h1>
@@ -36,12 +46,12 @@ const ViewEvents = (props) => {
 				{events.map((event) => {
 					return (
 						<>
-							<a
-								href="/event:{{event.potluck_id}}"
-								style={{ 'text-decoration': 'none', color: 'black' }}
-							>
-								<Event key={event.potluck_id} event={event} />
-							</a>
+							<Event
+								key={event.potluck_id}
+								event={event}
+								handleView={handleView}
+								id={event.potluck_id}
+							/>
 						</>
 					);
 				})}
@@ -49,7 +59,5 @@ const ViewEvents = (props) => {
 		</div>
 	);
 };
-
-//Export
 
 export default ViewEvents;

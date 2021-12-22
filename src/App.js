@@ -35,10 +35,11 @@ const App = () => {
 							component={CreatePotluck}
 						/>
 						<Route exact path="/events" component={ViewEvents} />
+						<Route path="/events/:id" exact component={Event} />
 						<Route exact path="/create-account" component={CreateAccount} />
 						<Route exact path="/logout" component={LogOut} />
 						<Route exact path="/login" component={Login} />
-						<Route path="/" component={Home} />
+						<Route exact path="/" component={Home} />
 					</Switch>
 				</RouteContainer>
 			</AppContainer>

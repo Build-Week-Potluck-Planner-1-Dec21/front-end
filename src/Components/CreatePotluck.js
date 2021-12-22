@@ -35,7 +35,8 @@ const CreatePotluck = () => {
         setPotluck({
             ...potluck,
             [e.target.name]: e.target.value,
-            // organizer: this.user.id?
+            // organizer: this.user.id? --- Ask Brian if this is solution
+            // https://github.com/Build-Week-Potluck-Planner-1-Dec21/back-end/blob/main/README.md
         })
     }
 

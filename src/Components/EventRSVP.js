@@ -6,21 +6,28 @@ import axiosWithAuth from '../utils/axiosWithAuth';
 // Initial data
 
 
-const initialItem = {
-    item_name: ''
-}
+
 
 //Component
 
-const EventRSVP = () => {
+const EventRSVP = (props) => {
 
-    const [ item, setItem ] = useState(initialItem)
+    const { potluck_id } = props
+
+    const initialRSVP = {
+        username: '',
+        item_name: '',
+        potluck_id: potluck_id,
+    }
+
+    const [ rsvp, setRsvp ] = useState(initialRSVP)
     const { push } = useHistory();
+    // add use params
 
     const handleChange = (e) => {
 
-        setItem({
-            ...item,
+        setRsvp({
+            ...rsvp,
             [e.target.name]: e.target.value,
         })
 
@@ -29,11 +36,10 @@ const EventRSVP = () => {
     const handleSubmit = (e) => {
         e.preventDefault();
         axiosWithAuth()
-        // confirm URL with Brian
-        .post(`/potlucks/:potluck_id/items`, item)
+        .post(`/potlucks/${potluck_id}/guests`, rsvp)
         .then(resp => {
             console.log(resp)
-            //push('/event/:id')
+            //push('/event/:potluck_id')
         })
         .catch(err => {
             console.log(err)
@@ -45,34 +51,21 @@ const EventRSVP = () => {
             <h2>RSVP This Event</h2>
             <form onSubmit={handleSubmit}>
                 <center>
-                <label>Name:
+                <label>What's your username?
                     <input 
                     type='text'
+                    name='username'
+                    onChange={handleChange}
                     />
                 </label>
                 <br />
-                <h4>What are you bringing?</h4>
-                <label>Item 1:
+                <label>What are you bringing? (one item only)
                     <input 
                     type='text'
                     name='item_name'
                     onChange={handleChange}
                     />
                 </label>
-                <br />
-                <label>Item 2:
-                    <input 
-                    type='text'
-                    />
-                </label>
-                <br />
-                <label>Item 3:
-                    <input 
-                    type='text'
-                    />
-                </label>
-                <br />
-                <br />
                 <button>Submit</button>
                 </center>
             </form>

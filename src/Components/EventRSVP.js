@@ -12,15 +12,16 @@ import axiosWithAuth from '../utils/axiosWithAuth';
 
 const EventRSVP = ( ) => {
 
+    const potluck_id = useParams();
+
     const initialRSVP = {
         username: '',
         item_name: '',
-        potluck_id: '',
+        potluck_id: potluck_id,
     }
 
     const [ rsvp, setRsvp ] = useState(initialRSVP)
     const { push } = useHistory();
-    const potluck_id = useParams();
 
     const handleChange = (e) => {
 
@@ -34,6 +35,7 @@ const EventRSVP = ( ) => {
     const handleSubmit = (e) => {
         e.preventDefault();
         axiosWithAuth()
+        // Need confirmation of end point from Brian
         .post(`/potlucks/${potluck_id}/guests`, rsvp)
         .then(resp => {
             console.log(resp)

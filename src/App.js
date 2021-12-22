@@ -28,7 +28,7 @@ const App = () => {
         <NavBar />
         <RouteContainer>
           <Switch>
-            <PrivateRoute exact path="/rsvp" component={EventRSVP} />
+            <PrivateRoute exact path="/rsvp/:potluck_id" component={EventRSVP} />
             <PrivateRoute
               exact
               path="/create-potluck"

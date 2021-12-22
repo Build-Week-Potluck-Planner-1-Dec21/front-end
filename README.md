@@ -26,7 +26,7 @@ If you have ever tried to organize a potluck through text messages, online to-do
 
 3. Axios was used to make HTTP requests to the heroku backend
 
-### **Styling*8
+### **Styling**
 
 For styling we mainly used Styled-components and some css
 

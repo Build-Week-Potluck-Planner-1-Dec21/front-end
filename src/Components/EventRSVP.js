@@ -18,6 +18,7 @@ const EventRSVP = () => {
     const { push } = useHistory();
 
     const handleChange = (e) => {
+
         setItem({
             ...item,
             [e.target.name]: e.target.value,

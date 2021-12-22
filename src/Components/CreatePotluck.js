@@ -21,22 +21,24 @@ const initialPotluck = {
      date: "",
      time: "",
      location: "",
-     organizer: 1,
+     // public: false,
 }
 
 // Component
 
 const CreatePotluck = () => {
 
-    const [ potluck, setPotluck] = useState(initialPotluck)
+    const [ potluck, setPotluck ] = useState(initialPotluck)
     const { push } = useHistory();
 
     const handleChange = (e) => {
+
+        // Brian please code the if/else statement below
+        // if (e.target.type === 'checkbox' ? )
+
         setPotluck({
             ...potluck,
             [e.target.name]: e.target.value,
-            // organizer: this.user.id? --- Ask Brian if this is solution
-            // https://github.com/Build-Week-Potluck-Planner-1-Dec21/back-end/blob/main/README.md
         })
     }
 
@@ -46,7 +48,7 @@ const CreatePotluck = () => {
         .post(`/potlucks`, potluck)
         .then(resp => {
             console.log(resp)
-            // push('/events')
+            push('/events')
         })
         .catch(err => {
             console.log(err)
@@ -93,9 +95,8 @@ const CreatePotluck = () => {
                 <label style={LabelStyle}>Public Event?:&nbsp;
                     <input 
                     type="checkbox" 
-                    name="public-event" 
-                    id="public-event"
-                    
+                    name="public" 
+                    id="public"
                     />
                 </label>
                 <button id='submit' style={LabelStyle}>Submit</button>

@@ -21,7 +21,7 @@ const initialPotluck = {
      date: "",
      time: "",
      location: "",
-     // public: false,
+     public: false,
 }
 
 // Component
@@ -32,9 +32,6 @@ const CreatePotluck = () => {
     const { push } = useHistory();
 
     const handleChange = (e) => {
-
-        // Brian please code the if/else statement below
-        // if ( e.target.type === 'checkbox' ? )
 
         setPotluck({
             ...potluck,
@@ -97,6 +94,14 @@ const CreatePotluck = () => {
                     type="checkbox" 
                     name="public" 
                     id="public"
+                    onChange={(e) => {
+                        handleChange({
+                            target: {
+                                name: e.target.name,
+                                value: e.target.checked,
+                            }
+                        })
+                    }}
                     />
                 </label>
                 <button id='submit' style={LabelStyle}>Submit</button>

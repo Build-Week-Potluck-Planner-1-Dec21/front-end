@@ -1,13 +1,11 @@
-import axios from 'axios';
 import React from 'react';
-import { Link } from 'react-router-dom';
 
 const Event = (props) => {
-	const { event, id, handleView } = props;
+	const { event, handleEdit, handleDelete, handleSelectEdit } = props;
 
 	return (
 		<>
-			<div key={event.potluck_id} className="card">
+			<div key={event.id} className="card">
 				<div className="lead text-center">{event.potluck_name}</div>
 				<p>
 					<strong>Date:</strong> {event.date}
@@ -19,7 +17,21 @@ const Event = (props) => {
 				</p>
 				<p>{event.potluck_description}</p>
 				<button>RSVP</button>&nbsp;&nbsp;&nbsp;
-				<button>Edit</button>&nbsp;&nbsp;&nbsp;<button>Delete</button>
+				<button
+					onClick={() => {
+						handleEditSelect(event.id);
+					}}
+				>
+					Edit
+				</button>
+				&nbsp;&nbsp;&nbsp;
+				<button
+					onClick={() => {
+						handleDelete(event.id);
+					}}
+				>
+					Delete
+				</button>
 			</div>
 		</>
 	);

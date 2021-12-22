@@ -1,17 +1,18 @@
-// Imports here
-import React from 'react'
+import React from 'react';
 
-//Component
+const EditEvent = (props) => {
+	const { handleEdit, handleDelete, event, editID } = props;
 
-const EditEvent = () => {
+	useEffect(() => {
+		axiosWithAuth()
+			.get(`/articles/${editId}`)
+			.then((resp) => {
+				setArticle(resp.data);
+			})
+			.catch((err) => console.log(err));
+	}, [editId]);
 
-    return(
-        <div>
-
-        </div>
-    )
+	return <div></div>;
 };
-
-//Export
 
 export default EditEvent;

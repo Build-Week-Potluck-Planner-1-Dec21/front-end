@@ -17,6 +17,8 @@ const initialValues = {
 
 const ViewEvents = (props) => {
 	const [events, setEvents] = useState([initialValues]);
+	const [editing, setEditing] = useState(false);
+	const [editID, setEditID] = useState('');
 
 	useEffect(() => {
 		axios
@@ -30,13 +32,22 @@ const ViewEvents = (props) => {
 			});
 	}, []);
 
-	const handleView = (event) => {
+	const handleEdit = (event) => {
 		axios
-			.get(`/events/${event.potluck_id}`)
+			.put(`/events/${event.id}`)
 			.then((res) => {
-				events.map((event) => (event.potluck_id == event.id ? res : event));
+				events.map((item) => (item.id == event.id ? res : item));
 			})
 			.catch((err) => console.log(err));
+	};
+
+	const handleDelete = (event) => {
+		axios.put();
+	};
+
+	const handleEditSelect = (id) => {
+		setEditing(true);
+		setEditID(id);
 	};
 
 	return (
@@ -45,17 +56,27 @@ const ViewEvents = (props) => {
 			<div className="grid-2">
 				{events.map((event) => {
 					return (
-						<>
+						<div key={event.id}>
 							<Event
-								key={event.potluck_id}
+								key={event.id}
 								event={event}
-								handleView={handleView}
-								id={event.potluck_id}
+								handleEdit={handleEdit}
+								handleDelete={handleDelete}
+								id={event.id}
+								handleEditSelect={handleEditSelect}
 							/>
-						</>
+						</div>
 					);
 				})}
 			</div>
+
+			{editing && (
+				<EditEvent
+					editID={editID}
+					handleEdit={handleEdit}
+					handleEditCancel={handleEditCancel}
+				/>
+			)}
 		</div>
 	);
 };

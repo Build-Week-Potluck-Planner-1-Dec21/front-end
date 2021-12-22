@@ -18,6 +18,11 @@ const EventRSVP = () => {
     const { push } = useHistory();
 
     const handleChange = (e) => {
+
+    // const { name, value, checked, type } = evt.target
+    // const valueToUse = type === 'checkbox' ? checked : value;
+    // change(name, valueToUse)
+
         setItem({
             ...item,
             [e.target.name]: e.target.value,

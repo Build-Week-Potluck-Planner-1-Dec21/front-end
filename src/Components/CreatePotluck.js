@@ -34,7 +34,7 @@ const CreatePotluck = () => {
     const handleChange = (e) => {
 
         // Brian please code the if/else statement below
-        // if (e.target.type === 'checkbox' ? )
+        // if ( e.target.type === 'checkbox' ? )
 
         setPotluck({
             ...potluck,

@@ -21,7 +21,7 @@ const Home = () => {
         Login
       </Link>
       <Link to="/create-account" className="button-hm">
-        Click here.
+        Create Account
       </Link>
     </div>
   );

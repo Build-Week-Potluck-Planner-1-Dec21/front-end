@@ -53,6 +53,7 @@ const CreatePotluck = () => {
     return(
         <div>           
             <form onSubmit={handleSubmit}>
+                <h2>Create a Potluck</h2>
                 <label style={LabelStyle}>Nickname:&nbsp;
                     <input 
                     type="text" 

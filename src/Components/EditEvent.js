@@ -41,7 +41,6 @@ const EditEvent = () => {
         axiosWithAuth()
         .put(`/potlucks/${potluck_id}`, editEvent)
         .then(resp => {
-            console.log(resp)
             push(`/events`)
         })
         .catch(err => {

@@ -1,6 +1,6 @@
 // Imports here
 import React from "react";
-import "../Design Assets/assets/css/Home.css";
+import "../DesignAssets/assets/css/Home.css";
 
 //Component
 

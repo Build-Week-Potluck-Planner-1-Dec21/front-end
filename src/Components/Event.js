@@ -23,7 +23,7 @@ const Event = (props) => {
 		axiosWithAuth()
 		.delete(`/potlucks/${event.potluck_id}`)
 		.then( resp => {
-			console.log(resp)
+			push(`/`)
 		})
 		.catch( err => {
 			console.log(err)

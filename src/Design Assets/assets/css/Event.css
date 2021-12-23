@@ -15,8 +15,9 @@
   border-radius: 2%;
 }
 
-p {
+.event-style {
   text-align: left;
+  width: 500px;
 }
 
 .desc {

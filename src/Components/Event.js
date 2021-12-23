@@ -17,7 +17,7 @@ const Event = (props) => {
   return (
     <>
       <div className="lead text-center">{event.potluck_name}</div>
-      <p>
+      <p className="event-style">
         <strong>Date:</strong> {event.date}
         <br />
         <strong>Location:</strong> {event.location}

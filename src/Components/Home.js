@@ -10,13 +10,7 @@ const Home = () => {
     <div>
       <h1>Home Component</h1>
       <div className="home-img"></div>
-      <p>
-        Cheese triangles cream cheese edam. Cottage cheese airedale stinking
-        bishop cut the cheese parmesan squirty cheese cheese strings feta.
-        Monterey jack hard cheese bocconcini airedale camembert de normandie
-        taleggio parmesan red leicester. Dolcelatte macaroni cheese cheese
-        strings.
-      </p>
+      <p className="home-style">"About this app"</p>
       <Link to="/login" className="button-hm">
         Login
       </Link>

@@ -25,8 +25,6 @@ const EditEvent = () => {
         date: '',
         location: '',
         time: '',
-        // Brian don't we need the below key/value pair?
-        // potluck_id: potluck_id,
     }
 
     const [ editEvent, setEditEvent ] = useState(initialEdit)
@@ -44,7 +42,7 @@ const EditEvent = () => {
         .put(`/potlucks/${potluck_id}`, editEvent)
         .then(resp => {
             console.log(resp)
-            // push(`/events`)
+            push(`/events`)
         })
         .catch(err => {
             console.log(err)

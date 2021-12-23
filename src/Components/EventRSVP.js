@@ -7,7 +7,6 @@ import axiosWithAuth from '../utils/axiosWithAuth';
 
 
 
-
 //Component
 
 const EventRSVP = ( ) => {
@@ -36,7 +35,7 @@ const EventRSVP = ( ) => {
         e.preventDefault();
         axiosWithAuth()
         // Need confirmation of end point from Brian
-        .post(`/potlucks/${potluck_id}/guests`, rsvp)
+        .put(`/potlucks/${potluck_id}/guests`, rsvp)
         .then(resp => {
             console.log(resp)
             //push('/event/:potluck_id')

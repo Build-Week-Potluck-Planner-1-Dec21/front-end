@@ -1,5 +1,6 @@
 // Imports here
 import React from 'react'
+import { useHistory, useParams } from 'react-router-dom';
 
 //Component
 
@@ -18,6 +19,8 @@ const LabelStyle = {
 
 
 const EditEvent = () => {
+
+    const potluck_id = useParams();
 
     return(
         <div>

@@ -14,6 +14,10 @@ const Event = (props) => {
 		push(`/rsvp/${event.potluck_id}`)
 	}
 
+	const handleEdit = () => {
+		push(`/potlucks/${event.potluck_id}`)
+	}
+
 	return (
 		<>
 			<div className="lead text-center">{event.potluck_name}</div>
@@ -29,7 +33,7 @@ const Event = (props) => {
 			<br />
 			<button onClick={handleRSVP}>RSVP</button>
 			<br />
-			<button>Edit</button>
+			<button onClick={handleEdit}>Edit</button>
 			<br />
 			<button>Delete</button>
 		</>

@@ -1,13 +1,14 @@
 // Imports here
 import React from 'react';
-import { useHistory } from 'react-router-dom';
+import { useHistory, useParams } from 'react-router-dom';
+import axiosWithAuth from '../utils/axiosWithAuth';
 
 //Component
 
 const Event = (props) => {
 
 	const { push } = useHistory();
-
+    const potluck_id = useParams();
 	const { event } = props;
 
 	const handleRSVP = () => {
@@ -16,6 +17,18 @@ const Event = (props) => {
 
 	const handleEdit = () => {
 		push(`/potlucks/${event.potluck_id}`)
+	}
+
+	const handleDelete = () => {
+		axiosWithAuth()
+		.delete(`/potlucks/${event.potluck_id}`)
+		.then( resp => {
+			push(`/`)
+		})
+		.catch( err => {
+			console.log(err)
+		})
+
 	}
 
 	return (
@@ -30,12 +43,15 @@ const Event = (props) => {
 				<strong>Event Organizer:</strong> {event.username} <br />
 			</p>
 			<p>{event.potluck_description}</p>
+			
 			<br />
 			<button onClick={handleRSVP}>RSVP</button>
 			<br />
 			<button onClick={handleEdit}>Edit</button>
 			<br />
-			<button>Delete</button>
+			<button onClick={handleDelete}>Delete</button>
+			<br />
+			
 		</>
 	);
 };

@@ -57,14 +57,6 @@ const EditEvent = () => {
         <div>
 <h1 style={{paddingBottom: '20px'}}>Edit your Event!</h1>
            <form onSubmit={handleSubmit}>
-           <label style={LabelStyle}>Nickname:&nbsp;
-               <input 
-               type="text" 
-               name="nickname" 
-               id="nickname"
-               onChange={handleChange}
-               />
-           </label>
            <label style={LabelStyle}>Event Date:&nbsp;
                <input 
                type="text" 

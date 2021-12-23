@@ -22,7 +22,6 @@ const EditEvent = () => {
     const { push } = useHistory();
 
     const initialEdit = {
-        name: '',
         date: '',
         location: '',
         time: '',
@@ -42,15 +41,15 @@ const EditEvent = () => {
     const handleSubmit = (e) => {
         e.preventDefault();
         axiosWithAuth()
-        .put(`/potlucks/${potluck_id}`)
+        .put(`/potlucks/${potluck_id}`, editEvent)
         .then(resp => {
             console.log(resp)
+            // push(`/events`)
         })
         .catch(err => {
             console.log(err)
         })
 
-        // push(`/events`)
     }
 
     return(
@@ -81,8 +80,8 @@ const EditEvent = () => {
                onChange={handleChange}
                />
            </label>
-           </form>
            <button id='submit' style={LabelStyle}>Submit</button>
+           </form>
         </div>
     )
 };

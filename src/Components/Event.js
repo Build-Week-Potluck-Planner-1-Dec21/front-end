@@ -33,7 +33,7 @@ const Event = (props) => {
 	}
 
 	return (
-		<>
+		<div className='event-border'>
 			<div className="lead text-center">{event.potluck_name}</div>
 			<p className="event-style">
 				<strong>Date:</strong> {event.date}
@@ -43,10 +43,6 @@ const Event = (props) => {
 				<strong>Time:</strong> {event.time} <br />
 				<strong>Event Organizer:</strong> {event.username} <br />
 			</p>
-			<p className="desc">
-				About this event : <br></br>
-				{event.potluck_description}</p>
-			
 			<button onClick={handleRSVP}>RSVP</button>
 			<br />
 			<button onClick={handleEdit}>Edit</button>
@@ -54,7 +50,7 @@ const Event = (props) => {
 			<button onClick={handleDelete}>Delete</button>
 			<br />
 			
-		</>
+		</div>
 	);
 };
 

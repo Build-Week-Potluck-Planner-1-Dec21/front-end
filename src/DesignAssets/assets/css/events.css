@@ -412,3 +412,9 @@ table th {
 		justify-content: center;
 	}
 }
+
+.event-border {
+	border: 1px solid black;
+	padding: 5%;
+	width: 40%px;
+}

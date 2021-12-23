@@ -9,9 +9,7 @@ import { useHistory } from 'react-router-dom';
       display: 'flex',
       flexDirection: 'column',
       justifyContent: 'space-evenly',
-      padding: 10,
-      margin: 10,
-      fontSize: 20,
+      fontSize: 16,
   }
 
 // Initial data
@@ -53,9 +51,7 @@ const CreatePotluck = () => {
     }
 
     return(
-        <div>
-          <h1 style={{paddingBottom: '20px'}}>Create Potluck!</h1>
-           
+        <div>           
             <form onSubmit={handleSubmit}>
                 <label style={LabelStyle}>Nickname:&nbsp;
                     <input 

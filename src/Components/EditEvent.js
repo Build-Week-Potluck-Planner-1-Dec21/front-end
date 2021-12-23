@@ -41,6 +41,16 @@ const EditEvent = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
+        axiosWithAuth()
+        .put(`/potlucks/${potluck_id}`)
+        .then(resp => {
+            console.log(resp)
+        })
+        .catch(err => {
+            console.log(err)
+        })
+
+        // push(`/events`)
     }
 
     return(

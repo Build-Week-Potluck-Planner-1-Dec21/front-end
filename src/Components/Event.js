@@ -21,7 +21,7 @@ const Event = (props) => {
 
 	const handleDelete = () => {
 		axiosWithAuth()
-		.delete(`/potlucks/${potluck_id}`)
+		.delete(`/potlucks/${event.potluck_id}`)
 		.then( resp => {
 			console.log(resp)
 		})

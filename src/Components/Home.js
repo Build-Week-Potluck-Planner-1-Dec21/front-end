@@ -8,7 +8,6 @@ import { Link } from 'react-router-dom';
 const Home = () => {
   return (
     <div>
-      <h1>Home Component</h1>
       <div className="home-img"></div>
       <br></br>
       <center>

@@ -1,11 +1,9 @@
 // Imports here
-import React from 'react'
+import React, {useState} from 'react'
 import { useHistory, useParams } from 'react-router-dom';
+import axiosWithAuth from '../utils/axiosWithAuth';
 
 //Component
-
-
-
 
 
 const LabelStyle = {
@@ -20,17 +18,25 @@ const LabelStyle = {
 
 const EditEvent = () => {
 
+    const potluck_id = useParams();
+    const { push } = useHistory();
+
     const initialEdit = {
         name: '',
         date: '',
         location: '',
         time: '',
+        // Brian don't we need the below key/value pair?
+        // potluck_id: potluck_id,
     }
 
-    const potluck_id = useParams();
+    const [ editEvent, setEditEvent ] = useState(initialEdit)
 
-    const handleChange = () => {
-
+    const handleChange = (e) => {
+        setEditEvent({
+            ...editEvent,
+            [e.target.name]: e.target.value,
+        })
     }
 
     const handleSubmit = (e) => {

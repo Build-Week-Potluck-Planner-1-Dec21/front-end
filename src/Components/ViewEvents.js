@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import '../Design Assets/assets/css/events.css';
+import '../DesignAssets/assets/css/events.css';
 import Event from './Event';
 import axios from 'axios';
 

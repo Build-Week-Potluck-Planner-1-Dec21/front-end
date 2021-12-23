@@ -1,14 +1,24 @@
 // Imports here
 import React from "react";
-import "../Design Assets/assets/css/Home.css";
+import "../DesignAssets/assets/css/Home.css";
+import { Link } from 'react-router-dom';
 
 //Component
 
 const Home = () => {
   return (
     <div>
-      <h1>Home Component</h1>
       <div className="home-img"></div>
+      <br></br>
+      <center>
+      <Link to="/login" className="button-hm">
+        Login
+      </Link>
+      <br></br>
+      <Link to="/create-account" className="button-hm">
+        Create Account
+      </Link>
+      </center>
     </div>
   );
 };

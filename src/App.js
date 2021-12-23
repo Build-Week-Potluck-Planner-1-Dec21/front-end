@@ -10,7 +10,7 @@ import Home from "./Components/Home";
 import NavBar from "./Components/NavBar";
 import ViewEvents from "./Components/ViewEvents";
 import Login from "./Components/Login";
-import Event from './Components/Event';
+import EditEvent from './Components/EditEvent';
 
 // Routing
 
@@ -29,11 +29,8 @@ const App = () => {
         <RouteContainer>
           <Switch>
             <PrivateRoute exact path="/rsvp/:potluck_id" component={EventRSVP} />
-            <PrivateRoute
-              exact
-              path="/create-potluck"
-              component={CreatePotluck}
-            />
+            <PrivateRoute exact path="/create-potluck" component={CreatePotluck} />
+            <PrivateRoute exact path='/potlucks/:potluck_id' component={EditEvent} />
             <Route exact path="/events" component={ViewEvents} />
             <Route exact path="/create-account" component={CreateAccount} />
             <Route exact path="/login" component={Login} />
